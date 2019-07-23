@@ -3,21 +3,60 @@
          
          fxLayout="column">
         <div fxLayout="row">
-        <section [hidden]="showResult">
-        <md-card fxLayoutAlign="center center" fxLayout="column">
+        <section [hidden]="showResult" fxLayout="row" fxLayoutAlign="space-between">
+        <md-card>
+            <h4>Usted cuenta con</h4>
+            <div fxLayout="column">
+                <div>
+                    <md-checkbox [(ngModel)]="tiene_telefono_fijo" class="torto">Telefono fijo</md-checkbox>
+                    <md-checkbox [(ngModel)]="tiene_computadora" class="torto">Computadora</md-checkbox>
+                    <md-checkbox [(ngModel)]="tiene_tv_cable" class="torto">TV Cable</md-checkbox>
+                    <md-checkbox [(ngModel)]="tiene_tv_satelital" class="torto">TV Satelital</md-checkbox>
+                    <md-checkbox [(ngModel)]="tiene_radio" class="torto">Radio</md-checkbox>
+                    <md-checkbox [(ngModel)]="tiene_alcantarillado" class="torto">Alcantarillado</md-checkbox>
+                    <md-checkbox [(ngModel)]="tiene_lavadora" class="torto">Lavadora</md-checkbox>
+                    <md-checkbox [(ngModel)]="tiene_microondas" class="torto">Microondas</md-checkbox>
+                    <md-checkbox [(ngModel)]="tiene_calefon" class="torto">Calefon</md-checkbox>
+                    <md-checkbox [(ngModel)]="tiene_tarjeta_credto" class="torto">Tarjeta de credito</md-checkbox>
+                    <md-checkbox [(ngModel)]="tiene_casa_propia" class="torto">Casa propia</md-checkbox>
+                    <md-checkbox [(ngModel)]="tiene_automovil_reciente" class="torto">Automovil modelo superior a 2012</md-checkbox>
+                </div>
+            </div>
+            <div>
+                <br/>
+                <br/>
+                <button md-raised-button (click)="predictIris()" color="primary"> Clasificar</button>
+            </div>
+        </md-card>
+        <md-card>
+            <h4>Usted cuenta con</h4>
+            <div fxLayout="column">
+                <div>
+                    <md-checkbox [(ngModel)]="tiene_telefono_fijo" class="torto">Telefono fijo</md-checkbox>
+                    <md-checkbox [(ngModel)]="tiene_computadora" class="torto">Computadora</md-checkbox>
+                    <md-checkbox [(ngModel)]="tiene_tv_cable" class="torto">TV Cable</md-checkbox>
+                    <md-checkbox [(ngModel)]="tiene_tv_satelital" class="torto">TV Satelital</md-checkbox>
+                    <md-checkbox [(ngModel)]="tiene_radio" class="torto">Radio</md-checkbox>
+                    <md-checkbox [(ngModel)]="tiene_alcantarillado" class="torto">Alcantarillado</md-checkbox>
+                    <md-checkbox [(ngModel)]="tiene_lavadora" class="torto">Lavadora</md-checkbox>
+                    <md-checkbox [(ngModel)]="tiene_microondas" class="torto">Microondas</md-checkbox>
+                    <md-checkbox [(ngModel)]="tiene_calefon" class="torto">Calefon</md-checkbox>
+                    <md-checkbox [(ngModel)]="tiene_tarjeta_credto" class="torto">Tarjeta de credito</md-checkbox>
+                    <md-checkbox [(ngModel)]="tiene_casa_propia" class="torto">Casa propia</md-checkbox>
+                    <md-checkbox [(ngModel)]="tiene_automovil_reciente" class="torto">Automovil modelo superior a 2012</md-checkbox>
+                </div>
+            </div>
+            <div>
+                <br/>
+                <br/>
+                <button md-raised-button (click)="predictIris()" color="primary"> Clasificar</button>
+            </div>
+        </md-card>
+        <!-- <md-card fxLayoutAlign="center center" fxLayout="column">
             <h4>Marque las palabras relacionadas a la sintomatologia</h4>
             <div fxLayout="column">
                 <div>
                     <md-checkbox *ngFor="let simptom of sintomas1" [(ngModel)]="simptom.value" class="torto">{{ simptom.name }}</md-checkbox>
-                </div>
-                <div>
-                        <md-checkbox *ngFor="let simptom of sintomas2" [(ngModel)]="simptom.value" class="torto">{{ simptom.name }}</md-checkbox>
-                </div>
-                <div>
-                    <md-checkbox *ngFor="let simptom of sintomas3" [(ngModel)]="simptom.value" class="torto">{{ simptom.name }}</md-checkbox>
-                </div>
-                <div>
-                    <md-checkbox *ngFor="let simptom of sintomas4" [(ngModel)]="simptom.value" class="torto">{{ simptom.name }}</md-checkbox>
                 </div>
             </div>
             <div>
@@ -25,7 +64,7 @@
                 <br/>
                 <button md-raised-button (click)="predictIris()" color="primary"> Diagnosticar</button>
             </div>
-        </md-card>
+        </md-card> -->
         </section>
         <section [hidden]="!showResult">
             <div 
