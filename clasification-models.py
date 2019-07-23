@@ -11,6 +11,7 @@ from sklearn.neural_network import MLPClassifier
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
 from sklearn.linear_model import LogisticRegression
+from sklearn.tree import export_graphviz
 
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -41,7 +42,7 @@ log = pd.DataFrame(columns=log_cols)
 
 df = pd.read_csv('encuesta_internautas_cluster_k_5_medias.csv', delimiter=',')
 X = df.values
-print(df.shape)
+print("Total dataset: ", df.shape)
 print(df.groupby('cluster').size())
 
 feature_names = ["tiene_telefono_fijo",
@@ -301,9 +302,9 @@ feature_names = ["tiene_telefono_fijo",
 X = df[feature_names]
 y = df['cluster']
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
-print(X_train.shape)
-print(X_test.shape)
+X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.8,test_size=0.2, random_state=101)
+print("Training: ", X_train.shape)
+print("Testing: ", X_test.shape)
 
 for clf in classifiers:
     clf.fit(X_train, y_train)
@@ -325,7 +326,6 @@ for clf in classifiers:
     print(confusion_matrix(y_test, test_predictions))
     print("Classification report")
     print(classification_report(y_test, test_predictions))
-    
 
     # log_entry = pd.DataFrame([[name, acc*100]], columns=log_cols)
     # log = log.append(log_entry)

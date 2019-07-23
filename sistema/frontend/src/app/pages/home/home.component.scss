@@ -1,0 +1,21 @@
+$chart-min-height: 400px;
+$chart-width: 1000px;
+.home__chart-container {
+    min-height: $chart-min-height;
+    width: $chart-width;
+    max-width: 100%;
+}
+
+ .torto { 
+  border: 1px transparent solid; 
+  display:inline-block;
+  width:12em;
+} 
+
+.legend-labels {
+    min-width: 100px;
+}
+
+.legend-label {
+    min-width: 100px;
+}

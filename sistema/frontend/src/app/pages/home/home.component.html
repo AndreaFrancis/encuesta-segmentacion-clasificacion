@@ -1,0 +1,52 @@
+<div fxLayoutAlign="center center" fxLayout="column">
+    <div class="home__prediction"
+         
+         fxLayout="column">
+        <div fxLayout="row">
+        <section [hidden]="showResult">
+        <md-card fxLayoutAlign="center center" fxLayout="column">
+            <h4>Marque las palabras relacionadas a la sintomatologia</h4>
+            <div fxLayout="column">
+                <div>
+                    <md-checkbox *ngFor="let simptom of sintomas1" [(ngModel)]="simptom.value" class="torto">{{ simptom.name }}</md-checkbox>
+                </div>
+                <div>
+                        <md-checkbox *ngFor="let simptom of sintomas2" [(ngModel)]="simptom.value" class="torto">{{ simptom.name }}</md-checkbox>
+                </div>
+                <div>
+                    <md-checkbox *ngFor="let simptom of sintomas3" [(ngModel)]="simptom.value" class="torto">{{ simptom.name }}</md-checkbox>
+                </div>
+                <div>
+                    <md-checkbox *ngFor="let simptom of sintomas4" [(ngModel)]="simptom.value" class="torto">{{ simptom.name }}</md-checkbox>
+                </div>
+            </div>
+            <div>
+                <br/>
+                <br/>
+                <button md-raised-button (click)="predictIris()" color="primary"> Diagnosticar</button>
+            </div>
+        </md-card>
+        </section>
+        <section [hidden]="!showResult">
+            <div 
+                fxLayoutAlign="center center"
+                fxLayout="column"
+                class="home__chart-container">
+               <h4>Resultado</h4>
+               <!-- <ngx-charts-pie-chart
+                   [results]="probabilityPredictions"
+                   [scheme]="colorScheme"
+                   [labels]="true"
+                   [legend]="true"
+                   [explodeSlices]="false"
+                   [doughnut]="false"
+                   [tooltipDisabled]="false">
+               </ngx-charts-pie-chart> -->
+           </div>
+           <br/>
+            <br/>
+           <button md-raised-button (click)="fillSimptoms()" color="primary">Llenar sintomas</button>
+        </section>	
+    </div>
+    </div>
+</div>
