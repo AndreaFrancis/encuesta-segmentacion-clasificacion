@@ -22,7 +22,7 @@ from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 import pickle
 
-df = pd.read_csv('encuesta_internautas_cluster_k_5_medias.csv', delimiter=',')
+df = pd.read_csv('datasets/encuesta_internautas_cluster_k_5_medias.csv', delimiter=',')
 X = df.values
 print("Total dataset: ", df.shape)
 print(df.groupby('cluster').size())
